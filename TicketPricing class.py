@@ -6,13 +6,14 @@ class TicketPricing:
     vat = 0.05
 
     # Using the init constructor to initialize a ticket pricing with default values for the attributes
-    def __init__(self):
+    def __init__(self, price_adult: float = 63.0, price_child: float = 0.0, price_senior: float = 0.0,
+                 student_discount: float = 0.0, group_discount: float = 0.5):
         # Default prices based on requirements
-        self.__price_adult = 63.0
-        self.__price_child = 0.0  # Children below 18 have free tickets
-        self.__price_senior = 0.0  # Seniors above 60 have free tickets
-        self.__student_discount = 0.0  # Students have free tickets
-        self.__group_discount = 0.5  # 50% discount for groups
+        self.__price_adult = price_adult
+        self.__price_child = price_child  # Children below 18 have free tickets
+        self.__price_senior = price_senior  # Seniors above 60 have free tickets
+        self.__student_discount = student_discount  # Students have free tickets
+        self.__group_discount = group_discount  # 50% discount for groups
 
     # Getters and setters for ticket prices
     def get_price_adult(self):
@@ -65,3 +66,20 @@ class TicketPricing:
         # Calculate total price including VAT
         total_price = discounted_price * (1 + TicketPricing.vat)
         return total_price
+
+    # Method to print the attributes
+    def __str__(self):
+        return (
+            "Price for Adult: " + str(self.__price_adult) + "\n" +
+            "Price for Child: " + str(self.__price_child) + "\n" +
+            "Price for Senior: " + str(self.__price_senior) + "\n" +
+            "Student Discount: " + str(self.__student_discount) + "\n" +
+            "Group Discount: " + str(self.__group_discount) + "\n"
+        )
+
+# Create an instance of TicketPricing
+ticket_pricing = TicketPricing()
+
+# Print the attributes using __str__ method
+print(ticket_pricing)
+
