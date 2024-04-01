@@ -5,18 +5,18 @@ class Ticket:
     class to represent a Ticket
     """
     # Using the init constructor to initialize a ticket with values for the attributes
-    def __init__(self, ticket_id: int, purchase_date: date, visitor_id: str, price: float, event_id: int):
+    def __init__(self, ticket_id: str, purchase_date: date, visitor_id: str, price: float, event_id: int):
         self.__ticket_id = ticket_id #the ticket id
-        self.__purchase_date = purchase_date#the purchase date of the ticket
-        self.__visitor_id = visitor_id#the visitor emirates ID
-        self.__price = price#the price of the purhased ticket
-        self.__event_id = event_id#the event id
+        self.__purchase_date = purchase_date #the purchase date of the ticket
+        self.__visitor_id = visitor_id #the visitor emirates ID
+        self.__price = price #the price of the purchased ticket
+        self.__event_id = event_id #the event id
 
     # getters and setters
     def get_ticket_id(self):
         return self.__ticket_id
 
-    def set_ticket_id(self, ticket_id: int):
+    def set_ticket_id(self, ticket_id: str):
         self.__ticket_id = ticket_id
 
     def get_purchase_date(self):
@@ -65,3 +65,9 @@ class Ticket:
 
     def print_ticket_details(self) -> None:
         print(f"Ticket ID: {self.__ticket_id}, Date: {self.__purchase_date}, Price: {self.__price}")
+
+# creating an instance of ticket
+ticket = Ticket(ticket_id="RGT5372", purchase_date=date(2024, 3, 31), visitor_id="78419892314", price=50.0, event_id=101)
+
+# Print the ticket details
+ticket.print_ticket_details()

@@ -8,16 +8,16 @@ class Artifact:
         self.__is_on_display = is_on_display
 
     # getters and setters...
-    def get_artifact_id(self) -> int:
+    def get_artifact_id(self):
         return self.__artifact_id
 
-    def set_artifact_id(self, artifact_id: int) -> None:
+    def set_artifact_id(self, artifact_id: int):
         self.__artifact_id = artifact_id
 
     def get_name(self) -> str:
         return self.__name
 
-    def set_name(self, name: str) -> None:
+    def set_name(self, name: str):
         self.__name = name
 
     def get_description(self) -> str:
