@@ -2,6 +2,8 @@ from exhibition import Exhibition
 from Artifact import Artifact
 from SpecialEvent import SpecialEvent
 from typing import List
+from datetime import date
+
 
 class LouvreMuseum:  #defining the LouvreMuseum class
     """class to represent the LouvreMuseum"""
@@ -92,7 +94,7 @@ louvre.add_artifact(artifact1)
 louvre.add_artifact(artifact2)
 
 # Adding special events with location provided
-special_event1 = SpecialEvent(1, "2024-07-15", "123456", 50.0, "Concert", "2024-07-15", "Concert Hall")
-special_event2 = SpecialEvent(2, "2024-08-10", "789012", 35.0, "Workshop", "2024-08-10", "Workshop Hall")
+special_event1 = SpecialEvent(ticket_id=1, purchase_date=date(2024, 7, 15), visitor_id="123456", price=50.0, event_id=1, event_name="Concert", event_date=date(2024, 7, 15), location="Concert Hall")
+special_event2 = SpecialEvent(ticket_id=2, purchase_date=date(2024, 8, 10), visitor_id="789012", price=35.0, event_id=2, event_name="Workshop", event_date=date(2024, 8, 10), location="Workshop Hall")
 louvre.add_special_event(special_event1)
 louvre.add_special_event(special_event2)
